@@ -180,7 +180,91 @@ header .mantra-bg {
   border: 2px solid #f06292;
   font-family: 'Roboto', sans-serif;
   min-width: 180px;
+}.family-tree {
+  overflow-x: auto;            /* horizontal scroll fallback */
+  padding: 0 10px;
 }
+
+.family-tree ul {
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;             /* allow wrapping on small screens */
+  margin: 0;
+}
+
+.family-tree li {
+  list-style: none;
+  text-align: center;
+  position: relative;
+  padding: 20px 10px 0 10px;
+  flex: 1 1 220px;             /* flex-grow, shrink, base width */
+  max-width: 260px;
+  box-sizing: border-box;
+}
+
+/* connector lines */
+.family-tree li::before,
+.family-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 2px solid #f06292;
+  width: 50%;
+  height: 20px;
+}
+.family-tree li::before { left: 0; }
+.family-tree li::after  { right: 0; }
+
+.family-tree li:only-child::before,
+.family-tree li:only-child::after {
+  display: none;
+}
+.family-tree li:only-child { padding-top: 0; }
+
+.family-tree li > ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #f06292;
+  width: 0;
+  height: 20px;
+}
+
+.family-tree span {
+  display: inline-block;
+  background: #fff7f2;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #f06292;
+  font-family: 'Roboto', sans-serif;
+  min-width: 180px;
+  box-sizing: border-box;
+}
+
+/* ----- Responsive tweaks ----- */
+@media (max-width: 768px) {
+  .family-tree ul {
+    flex-direction: column;      /* stack vertically */
+    align-items: center;
+  }
+
+  .family-tree li::before,
+  .family-tree li::after,
+  .family-tree li > ul::before {
+    display: none;               /* hide lines on small screens */
+  }
+
+  .family-tree li {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding-top: 10px;
+  }
+}
+
 
 
     </style>
@@ -218,7 +302,9 @@ header .mantra-bg {
     <p><span class="highlight">Intermediate:</span> ISC - 1st Div</p>
     <p><span class="highlight">10th:</span> 1st Div</p>
 </section>
-    <div class="family-tree">
+    <section class="family">
+    <h2>Family Details</h2>
+  <div class="family-tree">
   <ul>
     <li>
       <span>Grandparents<br>
@@ -252,8 +338,7 @@ header .mantra-bg {
     </li>
   </ul>
 </div>
-
-
+</section>
 <section class="family">
     <h2>Family Details</h2>
     <p><span class="highlight">Grand Father:</span> Suresh Thakur</p>
