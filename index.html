@@ -4,343 +4,564 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aayushi Priya - Wedding Biodata</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #fff7f2;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe8ef 100%);
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
         header {
-            background-color: #f06292;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c94b7c 100%);
             color: white;
-            text-align: center;
-            padding: 40px 20px;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
         }
-        header h1 {
-            margin: 0;
+
+        .mantra-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-5deg);
             font-size: 2.5em;
+            opacity: 0.08;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            white-space: nowrap;
+            pointer-events: none;
         }
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 1.1em;
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
         }
-        header img {
-            width: 150px;
-            height: 150px;
+
+        .ganesha-title {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            margin-top: 15px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             object-fit: cover;
-            border: 3px solid white;
+            margin: 20px auto;
+            display: block;
         }
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin: 20px 0 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        h2 {
-            color: #f06292;
-            border-bottom: 2px solid #f06292;
-            padding-bottom: 5px;
+
+        .tagline {
+            font-size: 1.1em;
+            font-weight: 300;
+            opacity: 0.95;
         }
-        .info, .family, .education, .contact, .certificates {
+
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 50px 40px;
+        }
+
+        /* Section Styling */
+        .section {
             margin-bottom: 30px;
         }
-        .info p, .education p, .family p, .contact p {
-            line-height: 1.6;
-            margin: 5px 0;
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #c94b7c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ff6b9d;
+            position: relative;
         }
-        .family-group, .extended-family-group {
-            margin-left: 20px;
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ff6b9d;
+            box-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
         }
-        .cousins-list {
-            margin-left: 40px;
+
+        /* About Me Section */
+        .about-text {
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
-        .contact a {
-            color: #f06292;
+
+        .hobbies {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hobby-item {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe8ef 100%);
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b9d;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hobby-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
+        }
+
+        .hobby-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #c94b7c;
+            min-width: 150px;
+        }
+
+        .info-value {
+            color: #555;
+            flex: 1;
+        }
+
+        /* Family Section */
+        .family-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .family-card h3 {
+            color: #c94b7c;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .family-member {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .family-member strong {
+            color: #2d2d2d;
+        }
+
+        /* Photo Gallery */
+        .full-width-section {
+            grid-column: 1 / -1;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Certificates */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .cert-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c94b7c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-info h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info h2::after {
+            background: white;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-item h3 {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .contact-item p, .contact-item a {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: white;
             text-decoration: none;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #f06292;
-            color: white;
-        }
-        .highlight {
-            font-weight: bold;
-        }
-        .certificates img {
-            width: 200px;
-            height: 260px;
-            margin: 10px;
-            border: 2px solid #f06292;
-            border-radius: 5px;
-            object-fit: cover;
-        }
+
         .download-btn {
             display: inline-block;
-            background: #f06292;
-            color: white;
-            padding: 10px 20px;
+            background: white;
+            color: #c94b7c;
+            padding: 15px 40px;
+            border-radius: 50px;
             text-decoration: none;
-            margin: 10px 0;
-            border-radius: 5px;
-            font-weight: bold;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
-        @media(max-width: 600px){
-            header h1 {
-                font-size: 2em;
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
             }
-            .certificates img {
-                width: 100%;
-                height: auto;
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .hobbies {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                flex-direction: column;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            .info-label {
+                min-width: 120px;
             }
         }
-        .ganesha-title {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: 'Noto Sans Devanagari', sans-serif;
-}
-
-/* Sanskrit mantra as faint background */
-header {
-    position: relative;
-    overflow: hidden;
-}
-
-header .mantra-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    text-align: center;
-    font-size: 3em;
-    line-height: 1.3;
-    color: rgba(255, 255, 255, 0.1); /* soft, watermark effect */
-    transform: translate(-50%, -50%) rotate(-10deg);
-    white-space: normal;
-    pointer-events: none;
-    user-select: none;
-}/* === Family Tree === */
-.family-tree-section h2 {
-  color: #f06292;
-  border-bottom: 2px solid #f06292;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-/* Base UL */
-.family-tree ul {
-  padding-top: 20px;
-  position: relative;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-/* Each LI node */
-.family-tree li {
-  list-style-type: none;
-  position: relative;
-  margin: 0 20px;
-  padding-top: 20px;
-}
-
-/* Vertical connector line down to children */
-.family-tree li::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  border-left: 2px solid #f06292;
-  height: 20px;
-}
-
-/* Horizontal connector lines to siblings */
-.family-tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border-top: 2px solid #f06292;
-  width: 100%;
-}
-
-/* Remove lines for single child */
-.family-tree li:only-child::after,
-.family-tree li:only-child::before {
-  display: none;
-}
-
-/* Node box */
-.family-tree span {
-  display: inline-block;
-  background: #fff7f2;
-  border: 2px solid #f06292;
-  border-radius: 10px;
-  padding: 10px 15px;
-  min-width: 200px;
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Children UL connectors */
-.family-tree li > ul::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  border-left: 2px solid #f06292;
-  height: 20px;
-}
-
-/* Responsive tweaks */
-@media(max-width: 768px) {
-  .family-tree span { min-width: 160px; font-size: 0.9em; }
-  .family-tree li { margin: 0 10px; }
-}
-
-
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="mantra-bg">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा</div>
+            <div class="header-content">
+                <div class="ganesha-title">श्री गणेशाय नमः</div>
+                <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="Aayushi Priya" class="profile-img">
+                <h1>Aayushi Priya</h1>
+                <p class="tagline">BSc Graduate | GNM Nursing Student</p>
+            </div>
+        </header>
 
-<header>
-    <!-- Top line in Hindi -->
-    <div class="ganesha-title">श्री गणेशाय नमः</div>
+        <div class="main-content">
+            <!-- About Me Section -->
+            <div class="section full-width-section">
+                <h2>About Me</h2>
+                <p class="about-text">
+                    A compassionate and dedicated nursing professional with a strong academic background and a genuine passion for healthcare. Currently pursuing GNM in my 2nd year, I believe in combining modern medical practices with traditional values. My approach to life is rooted in continuous learning, helping others, and maintaining a balance between professional growth and personal interests.
+                </p>
+                <div class="hobbies">
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🌱</span>
+                        <strong>Gardening</strong> - Nurturing plants and connecting with nature
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">📚</span>
+                        <strong>Teaching</strong> - Sharing knowledge and inspiring others
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">💉</span>
+                        <strong>Nursing</strong> - Caring for patients with dedication
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon">🎨</span>
+                        <strong>Drawing</strong> - Expressing creativity through art
+                    </div>
+                </div>
+            </div>
 
-    <h1>Aayushi Priya</h1>
-    <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="Profile Photo">
-    <!-- Background mantra text -->
-    <div class="mantra-bg">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</div>
-</header>
+            <!-- Personal Information -->
+            <div class="section">
+                <h2>Personal Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value">17 September 2002</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time of Birth</span>
+                        <span class="info-value">03:30 AM</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Place of Birth</span>
+                        <span class="info-value">Gurmiya, Vaishali, Bihar</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Height</span>
+                        <span class="info-value">5'7"</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Weight</span>
+                        <span class="info-value">50 Kg</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Blood Group</span>
+                        <span class="info-value">O+ve</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Caste / Gotra</span>
+                        <span class="info-value">Bhumihar / Bhardwaj</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Raashi</span>
+                        <span class="info-value">Mesh (Aries)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Complexion</span>
+                        <span class="info-value">Fair</span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Education -->
+            <div class="section">
+                <h2>Education & Career</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Current</span>
+                        <span class="info-value">GNM - 2nd Year</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Graduation</span>
+                        <span class="info-value">BSc - 1st Division</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Intermediate</span>
+                        <span class="info-value">ISC - 1st Division</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Matriculation</span>
+                        <span class="info-value">10th - 1st Division</span>
+                    </div>
+                </div>
+            </div>
 
-<section class="info">
-    <h2>Personal Information</h2>
-    <p><span class="highlight">Date of Birth:</span> 17-Sep-2002</p>
-    <p><span class="highlight">Time of Birth:</span> 03:30 am</p>
-    <p><span class="highlight">Place of Birth:</span> Gurmiya</p>
-    <p><span class="highlight">Height:</span> 5.4 ft</p>
-    <p><span class="highlight">Weight:</span> 50 Kg</p>
-    <p><span class="highlight">Blood Group:</span> O+ve</p>
-    <p><span class="highlight">Caste / Gotra:</span> Bhumihar / Bhardwaj</p>
-    <p><span class="highlight">Raashi:</span> Mesh (Aries)</p>
-    <p><span class="highlight">Complexion:</span> Fair</p>
-</section>
+            <!-- Family Details -->
+            <div class="section full-width-section">
+                <h2>Family Details</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="family-card">
+                        <h3>Grandparents & Parents (Node 1)</h3>
+                        <div class="family-member"><strong>Grandfather:</strong> Suresh Thakur</div>
+                        <div class="family-member"><strong>Grandmother:</strong> Late. Shanti Devi</div>
+                        <div class="family-member" style="margin-top: 15px;"><strong>Father:</strong> Sanjay Thakur (Farming)</div>
+                        <div class="family-member"><strong>Mother:</strong> Mala Devi (ANM, Health Dept.)</div>
+                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                            <div class="family-member"><strong>Siblings:</strong></div>
+                            <div class="family-member">• <strong>Aryan Raj</strong> - 12th Board<br><small style="margin-left: 12px;">NCSC Achiever, State Level Kabaddi Player</small></div>
+                            <div class="family-member">• <strong>Akanksha Shubham</strong> - Graduation 1st Year<br><small style="margin-left: 12px;">National Kabaddi Player, State Running Player</small></div>
+                        </div>
+                    </div>
+                    <div class="family-card">
+                        <h3>Grandparents & Uncle's Family (Node 2)</h3>
+                        <div class="family-member"><strong>Grandfather:</strong> Suresh Thakur</div>
+                        <div class="family-member"><strong>Grandmother:</strong> Late. Shanti Devi</div>
+                        <div class="family-member" style="margin-top: 15px;"><strong>Elder Father (Uncle):</strong> Satyendra Thakur (Businessman)</div>
+                        <div class="family-member"><strong>Aunt:</strong> Mandavi Kumari</div>
+                        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                            <div class="family-member"><strong>Cousins:</strong></div>
+                            <div class="family-member">• <strong>Deepak Kumar</strong> - Director of AI (Elastiq.ai)<br><small style="margin-left: 12px;">Spouse: Dr. Vandana Kumari (Govt. Teacher)</small></div>
+                            <div class="family-member">• <strong>Priyanka Kumari</strong> - Lawyer</div>
+                            <div class="family-member">• <strong>Pinki Kumari</strong> - Teacher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<section class="education">
-    <h2>Education & Career</h2>
-    <p><span class="highlight">GNM:</span> 2nd Year</p>
-    <p><span class="highlight">Graduation:</span> BSc - 1st Div</p>
-    <p><span class="highlight">Intermediate:</span> ISC - 1st Div</p>
-    <p><span class="highlight">10th:</span> 1st Div</p>
-</section>
-  <!-- ===== FAMILY TREE SECTION ===== -->
-<section class="family-tree-section">
-  <h2>Family Tree</h2>
-  <div class="family-tree">
-    <ul>
-      <li>
-        <span>Grandparents<br>Suresh Thakur | Late Shanti Devi</span>
-        <ul>
-          <li>
-            <span>Parents<br>Sanjay Thakur (Farming) &amp; Mala Devi (ANM)</span>
-            <ul>
-              <li><span>Aryan Raj<br>12th Board – NCSC, State Kabaddi</span></li>
-              <li><span>Akanksha Shubham<br>Graduation 1st Yr – National Kabaddi, State Running</span></li>
-            </ul>
-          </li>
-          <li>
-            <span>Elder Father &amp; Aunt<br>Satyendra Thakur (Business) &amp; Mandavi Kumari</span>
-            <ul>
-              <li>
-                <span>Deepak Kumar – Director of AI (Elastiq.ai)<br>
-                  Spouse: Dr. Vandana Kumari (Govt Teacher)
-                </span>
-              </li>
-              <li><span>Priyanka Kumari – Lawyer</span></li>
-              <li><span>Pinki Kumari – Teacher</span></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</section>
+            <!-- Photo Gallery -->
+            <div class="section full-width-section">
+                <h2>Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" target="_blank" class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" alt="Nursing Ceremony">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" target="_blank" class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" alt="Nursing Ceremony">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" target="_blank" class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" alt="Profile Photo">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" target="_blank" class="gallery-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" alt="Personal Photo">
+                    </a>
+                </div>
+            </div>
 
-<section class="family">
-    <h2>Family Details</h2>
-    <p><span class="highlight">Grand Father:</span> Suresh Thakur</p>
-    <p><span class="highlight">Grand Mother:</span> Late. Shanti Devi</p>
-    <p><span class="highlight">Father:</span> Sanjay Thakur (Farming)</p>
-    <p><span class="highlight">Mother:</span> Mala Devi (Health Department - ANM)</p>
-    <p><span class="highlight">Siblings:</span></p>
-    <div class="family-group">
-        <p>Aryan Raj - 12th Board, Achievements: NCSC (Achievers), State Level Kabaddi Player</p>
-        <p>Akanksha Shubham - Graduation 1st Year, Achievements: National Kabaddi Player, State Running Player</p>
+            <!-- Certificates -->
+            <div class="section full-width-section">
+                <h2>Certificates & Achievements</h2>
+                <div class="cert-grid">
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/12th.jpeg" target="_blank" class="cert-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/12th.jpeg" alt="12th Certificate">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Matric.jpeg" target="_blank" class="cert-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Matric.jpeg" alt="Matriculation Certificate">
+                    </a>
+                    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Intermediate.jpeg" target="_blank" class="cert-item">
+                        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Intermediate.jpeg" alt="Intermediate Certificate">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>Address</h3>
+                    <p>Shanti Kunj, Gurmiya<br>Near Jagdamba Mandir<br>Dist. Vaishali, Bihar</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Primary Contact</h3>
+                    <a href="tel:+918010790211">+91 8010790211</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Secondary Contact</h3>
+                    <a href="tel:+916203803658">+91 6203803658</a>
+                </div>
+            </div>
+            <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/Aayushi_Biodata.pdf" target="_blank" class="download-btn">Download PDF Biodata</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Aayushi Priya - All Rights Reserved</p>
+        </footer>
     </div>
-    <p><span class="highlight">Elder Father (Bade Papa):</span> Mr. Satyendra Thakur (Businessman)</p>
-    <p><span class="highlight">Aunt (Badi Mummy):</span> Mrs. Mandavi Kumari</p>
-    <p><span class="highlight">Brother:</span> Deepak Kumar - Director of AI (Elastiq.ai)</p>
-    <p><span class="highlight">Bhabhi:</span> Dr. Vandana Kumari - Govt Teacher</p>
-    <p><span class="highlight">Sisters :</span> Priyanka Kumari - Lawyer and Pinki Kumari (Teacher)</p>
-    </div>
-</section>
-<section class="certificates">
-    <h2>Certificates & Achievements</h2>
-    <p>Click images to view full certificate.</p>
-    <!-- Example: Replace URLs with your GitHub hosted certificates -->
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/12th.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/12th.jpeg" alt="12th Certificate">
-    </a>
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Matric.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Matric.jpeg" alt="12th Certificate">
-    </a>
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Intermediate.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Intermediate.jpeg" alt="Graduation Certificate">
-    </a>
-</section>
-<section class="PhotoGallery">
-    <h2>Photos Gallery</h2>
-    <p>Click images to view full images</p>
-    <!-- Example: Replace URLs with your GitHub hosted certificates -->
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" alt="AyushPriya(Nursing ceromony)">
-    </a>
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" alt="AyushPriya(Nursing ceromony)">
-    </a> <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" alt="Teacher's Day">
-    </a>
-     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="AyushPriya(Nursing ceromony)">
-    </a>
-     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" alt="AyushPriya(Nursing ceromony)">
-    </a>
-</section>
-<section class="contact">
-    <h2>Contact Information</h2>
-    <p><span class="highlight">Address:</span> Shanti Kunj, Gurmiya, Near Jagdamba Mandir, Dist- Vaishali, Bihar</p>
-    <p><span class="highlight">Primary Contact:</span> <a href="tel:+918010790211">+91 8010790211</a></p>
-    <p><span class="highlight">Secondary Contact:</span> <a href="tel:+916203803658">+91 6203803658</a></p>
-
-    <!-- Download PDF Button -->
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/Aayushi_Biodata.pdf" target="_blank" class="download-btn">Download PDF Biodata</a>
-</section>
-
-<footer>
-    <p>&copy; 2025 Aayushi Priya - All rights reserved</p>
-</footer>
-
 </body>
 </html>
