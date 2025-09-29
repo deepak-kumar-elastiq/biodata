@@ -126,7 +126,62 @@ header .mantra-bg {
     white-space: normal;
     pointer-events: none;
     user-select: none;
+}.family-tree ul {
+  padding-top: 20px;
+  position: relative;
+  display: table;
+  margin: 0 auto;
 }
+
+.family-tree li {
+  display: table-cell;
+  text-align: center;
+  position: relative;
+  padding: 20px 10px 0 10px;
+  list-style: none;
+}
+
+/* connecting lines */
+.family-tree li::before, .family-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-top: 2px solid #f06292;
+  width: 50%;
+  height: 20px;
+}
+.family-tree li::before { left: 0; }
+.family-tree li::after  { right: 0; }
+
+.family-tree li:only-child::before,
+.family-tree li:only-child::after {
+  display: none;
+}
+
+.family-tree li:only-child { padding-top: 0; }
+
+/* downward vertical line */
+.family-tree li > ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #f06292;
+  width: 0;
+  height: 20px;
+}
+
+.family-tree span {
+  display: inline-block;
+  background: #fff7f2;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #f06292;
+  font-family: 'Roboto', sans-serif;
+  min-width: 180px;
+}
+
 
     </style>
 </head>
@@ -163,6 +218,41 @@ header .mantra-bg {
     <p><span class="highlight">Intermediate:</span> ISC - 1st Div</p>
     <p><span class="highlight">10th:</span> 1st Div</p>
 </section>
+    <div class="family-tree">
+  <ul>
+    <li>
+      <span>Grandparents<br>
+        Suresh Thakur &nbsp;|&nbsp; Late Shanti Devi
+      </span>
+      <ul>
+        <li>
+          <span>Parents<br>
+            Sanjay Thakur (Farming) &amp; Mala Devi (ANM)
+          </span>
+          <ul>
+            <li><span>Aryan Raj<br>12th Board – NCSC, State Kabaddi</span></li>
+            <li><span>Akanksha Shubham<br>Graduation 1st Yr – National Kabaddi, State Running</span></li>
+          </ul>
+        </li>
+        <li>
+          <span>Elder Father &amp; Aunt<br>
+            Satyendra Thakur (Business) &amp; Mandavi Kumari
+          </span>
+          <ul>
+            <li>
+              <span>Deepak Kumar – Director of AI (Elastiq.ai)<br>
+                Spouse: Dr. Vandana Kumari (Govt Teacher)
+              </span>
+            </li>
+            <li><span>Priyanka Kumari – Lawyer</span></li>
+            <li><span>Pinki Kumari – Teacher</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
 
 <section class="family">
     <h2>Family Details</h2>
