@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aayushi Priya - Wedding Biodata</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -98,16 +100,48 @@
                 height: auto;
             }
         }
+        .ganesha-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* Sanskrit mantra as faint background */
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+header .mantra-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    text-align: center;
+    font-size: 3em;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.1); /* soft, watermark effect */
+    transform: translate(-50%, -50%) rotate(-10deg);
+    white-space: normal;
+    pointer-events: none;
+    user-select: none;
+}
+
     </style>
 </head>
 <body>
 
 <header>
+    <!-- Top line in Hindi -->
+    <div class="ganesha-title">श्री गणेशाय नमः</div>
+
     <h1>Aayushi Priya</h1>
-    <p>Wedding Biodata Portfolio</p>
-    <!-- Replace the src URL with your GitHub hosted profile photo -->
     <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="Profile Photo">
+    <!-- Background mantra text -->
+    <div class="mantra-bg">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</div>
 </header>
+
 
 <section class="info">
     <h2>Personal Information</h2>
@@ -132,6 +166,8 @@
 
 <section class="family">
     <h2>Family Details</h2>
+    <p><span class="highlight">Grand Father:</span> Suresh Thakur</p>
+    <p><span class="highlight">Grand Mother:</span> Late. Shanti Devi</p>
     <p><span class="highlight">Father:</span> Sanjay Thakur (Farming)</p>
     <p><span class="highlight">Mother:</span> Mala Devi (Health Department - ANM)</p>
     <p><span class="highlight">Siblings:</span></p>
@@ -139,18 +175,13 @@
         <p>Aryan Raj - 12th Board, Achievements: NCSC (Achievers), State Level Kabaddi Player</p>
         <p>Akanksha Shubham - Graduation 1st Year, Achievements: National Kabaddi Player, State Running Player</p>
     </div>
-
-    <h3>Extended Paternal Family</h3>
     <p><span class="highlight">Elder Father (Bade Papa):</span> Mr. Satyendra Thakur (Businessman)</p>
     <p><span class="highlight">Aunt (Badi Mummy):</span> Mrs. Mandavi Kumari</p>
-    <p><span class="highlight">Cousins:</span></p>
-    <div class="cousins-list">
-        <p>Deepak Kumar - Director of AI (Elastiq.ai)</p>
-        <p>Priyanka Kumari - Lawyer</p>
-        <p>Pinki Kumari - Homemaker</p>
+    <p><span class="highlight">Brother:</span> Deepak Kumar - Director of AI (Elastiq.ai)</p>
+    <p><span class="highlight">Bhabhi:</span> Dr. Vandana Kumari - Govt Teacher</p>
+    <p><span class="highlight">Sisters :</span> Priyanka Kumari - Lawyer and Pinki Kumari (Teacher)</p>
     </div>
 </section>
-
 <section class="certificates">
     <h2>Certificates & Achievements</h2>
     <p>Click images to view full certificate.</p>
@@ -165,7 +196,25 @@
         <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/certificates/Intermediate.jpeg" alt="Graduation Certificate">
     </a>
 </section>
-
+<section class="PhotoGallery">
+    <h2>Photos Gallery</h2>
+    <p>Click images to view full images</p>
+    <!-- Example: Replace URLs with your GitHub hosted certificates -->
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" alt="AyushPriya(Nursing ceromony)">
+    </a>
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" alt="AyushPriya(Nursing ceromony)">
+    </a> <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" alt="Teacher's Day">
+    </a>
+     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="AyushPriya(Nursing ceromony)">
+    </a>
+     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" target="_blank">
+        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" alt="AyushPriya(Nursing ceromony)">
+    </a>
+</section>
 <section class="contact">
     <h2>Contact Information</h2>
     <p><span class="highlight">Address:</span> Shanti Kunj, Gurmiya, Near Jagdamba Mandir, Dist- Vaishali, Bihar</p>
