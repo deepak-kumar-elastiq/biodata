@@ -126,33 +126,94 @@ header .mantra-bg {
     white-space: normal;
     pointer-events: none;
     user-select: none;
-}/* === Family Tree === */
+}/* === Responsive Photo Gallery === */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.gallery-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #f06292;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.08);
+}
+
+/* Optional lightbox */
+.gallery-lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.gallery-lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* === Family Tree (connected) === */
 .family-tree-section h2 {
+  text-align: center;
   color: #f06292;
   border-bottom: 2px solid #f06292;
   padding-bottom: 5px;
-  text-align: center;
 }
 
-/* Base UL */
-.family-tree ul {
-  padding-top: 20px;
-  position: relative;
-  text-align: center;
+.family-tree {
   display: flex;
   justify-content: center;
-}
-
-/* Each LI node */
-.family-tree li {
-  list-style-type: none;
-  position: relative;
-  margin: 0 20px;
   padding-top: 20px;
 }
 
-/* Vertical connector line down to children */
-.family-tree li::before {
+.family-tree ul {
+  position: relative;
+  padding-top: 20px;
+}
+
+.family-tree li {
+  list-style: none;
+  text-align: center;
+  position: relative;
+  padding: 20px 10px 0 10px;
+}
+
+.family-tree li::before,
+.family-tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  border-top: 2px solid #f06292;
+  height: 20px;
+}
+.family-tree li::before { left: 0; }
+.family-tree li::after  { right: 0; }
+
+.family-tree li:only-child::before,
+.family-tree li:only-child::after {
+  display: none;
+}
+
+.family-tree li > ul::before {
   content: '';
   position: absolute;
   top: 0;
@@ -161,25 +222,6 @@ header .mantra-bg {
   height: 20px;
 }
 
-/* Horizontal connector lines to siblings */
-.family-tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border-top: 2px solid #f06292;
-  width: 100%;
-}
-
-/* Remove lines for single child */
-.family-tree li:only-child::after,
-.family-tree li:only-child::before {
-  display: none;
-}
-
-/* Node box */
 .family-tree span {
   display: inline-block;
   background: #fff7f2;
@@ -187,29 +229,30 @@ header .mantra-bg {
   border-radius: 10px;
   padding: 10px 15px;
   min-width: 200px;
-  font-family: 'Roboto', sans-serif;
-  color: #333;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Children UL connectors */
-.family-tree li > ul::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  border-left: 2px solid #f06292;
-  height: 20px;
-}
-
-/* Responsive tweaks */
+/* Mobile tweak */
 @media(max-width: 768px) {
   .family-tree span { min-width: 160px; font-size: 0.9em; }
-  .family-tree li { margin: 0 10px; }
 }
+
 
 
     </style>
+    <script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+document.querySelectorAll('.gallery-grid a').forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    lightboxImg.src = link.href;
+    lightbox.style.display = 'flex';
+  });
+});
+lightbox.addEventListener('click', ()=> lightbox.style.display = 'none');
+</script>
+
 </head>
 <body>
 
@@ -229,8 +272,8 @@ header .mantra-bg {
     <p><span class="highlight">Date of Birth:</span> 17-Sep-2002</p>
     <p><span class="highlight">Time of Birth:</span> 03:30 am</p>
     <p><span class="highlight">Place of Birth:</span> Gurmiya</p>
-    <p><span class="highlight">Height:</span> 5.7 ft</p>
-    <p><span class="highlight">Weight:</span> 50 Kg</p>
+    <p><span class="highlight">Height:</span> 5.4 ft</p>
+    <p><span class="highlight">Weight:</span> 47 Kg</p>
     <p><span class="highlight">Blood Group:</span> O+ve</p>
     <p><span class="highlight">Caste / Gotra:</span> Bhumihar / Bhardwaj</p>
     <p><span class="highlight">Raashi:</span> Mesh (Aries)</p>
@@ -244,8 +287,7 @@ header .mantra-bg {
     <p><span class="highlight">Intermediate:</span> ISC - 1st Div</p>
     <p><span class="highlight">10th:</span> 1st Div</p>
 </section>
-  <!-- ===== FAMILY TREE SECTION ===== -->
-<section class="family-tree-section">
+ <section class="family-tree-section">
   <h2>Family Tree</h2>
   <div class="family-tree">
     <ul>
@@ -262,11 +304,7 @@ header .mantra-bg {
           <li>
             <span>Elder Father &amp; Aunt<br>Satyendra Thakur (Business) &amp; Mandavi Kumari</span>
             <ul>
-              <li>
-                <span>Deepak Kumar – Director of AI (Elastiq.ai)<br>
-                  Spouse: Dr. Vandana Kumari (Govt Teacher)
-                </span>
-              </li>
+              <li><span>Deepak Kumar – Director of AI (Elastiq.ai)<br>Spouse: Dr. Vandana Kumari (Govt Teacher)</span></li>
               <li><span>Priyanka Kumari – Lawyer</span></li>
               <li><span>Pinki Kumari – Teacher</span></li>
             </ul>
@@ -310,24 +348,33 @@ header .mantra-bg {
     </a>
 </section>
 <section class="PhotoGallery">
-    <h2>Photos Gallery</h2>
-    <p>Click images to view full images</p>
-    <!-- Example: Replace URLs with your GitHub hosted certificates -->
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" alt="AyushPriya(Nursing ceromony)">
+  <h2>Photo Gallery</h2>
+  <p>Click any image to view full size</p>
+
+  <div class="gallery-grid">
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg">
+      <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing.jpeg" alt="Nursing Ceremony">
     </a>
-    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" alt="AyushPriya(Nursing ceromony)">
-    </a> <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" alt="Teacher's Day">
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg">
+      <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Nursing1.jpeg" alt="Nursing Ceremony 2">
     </a>
-     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="AyushPriya(Nursing ceromony)">
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg">
+      <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/Profile.jpeg" alt="Profile">
     </a>
-     <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" target="_blank">
-        <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" alt="AyushPriya(Nursing ceromony)">
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg">
+      <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/ProfilePic.jpeg" alt="Profile Pic">
     </a>
+    <a href="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg">
+      <img src="https://raw.githubusercontent.com/ayushi-priya073/biodata/main/images/p1.jpeg" alt="Gallery Image">
+    </a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="gallery-lightbox" id="lightbox">
+    <img src="" alt="Enlarged Photo">
+  </div>
 </section>
+
 <section class="contact">
     <h2>Contact Information</h2>
     <p><span class="highlight">Address:</span> Shanti Kunj, Gurmiya, Near Jagdamba Mandir, Dist- Vaishali, Bihar</p>
